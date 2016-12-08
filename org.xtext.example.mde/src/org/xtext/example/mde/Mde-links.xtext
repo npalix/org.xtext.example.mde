@@ -1,0 +1,14 @@
+grammar org.xtext.example.mde.Ref with org.eclipse.xtext.common.Terminals
+
+generate ref "http://www.xtext.org/example/mde/Ref"
+
+Model:
+	person+=Person* greetings+=Greeting*;
+
+Person:
+	'Mrs' name=ID '.'
+|   'Mr' name=ID '.'
+;
+	
+Greeting:
+	'Hello' p=[Person] '!';

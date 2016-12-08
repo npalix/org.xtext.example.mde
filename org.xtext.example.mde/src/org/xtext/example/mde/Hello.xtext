@@ -1,0 +1,9 @@
+grammar org.xtext.example.mde.Hello with org.eclipse.xtext.common.Terminals
+
+generate mde "http://www.xtext.org/example/mde/Hello"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

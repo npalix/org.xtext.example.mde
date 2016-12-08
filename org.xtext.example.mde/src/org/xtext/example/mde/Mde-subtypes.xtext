@@ -1,0 +1,14 @@
+grammar org.xtext.example.mde.MDE with org.eclipse.xtext.common.Terminals
+
+generate mde "http://www.xtext.org/example/mde/MDE"
+
+Model:
+	person+=Person* greetings+=Greeting*;
+
+Person:
+ {Female} 'Mrs' name=ID '.'
+| {Male}  'Mr' name=ID '.'
+;
+	
+Greeting:
+	'Hello' p=[Person] '!';
